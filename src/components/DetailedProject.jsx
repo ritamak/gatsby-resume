@@ -48,7 +48,7 @@ const LinkWrapper = styled.section`
   gap: 30px;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   text-decoration: none;
   color: #fff;
   background: #7664a8;
@@ -133,8 +133,20 @@ const DetailedProject = ({
         <DescriptionWrapper>
           <LongDescription>{longDescription}</LongDescription>
           <LinkWrapper>
-            <StyledLink to={repoClient}>Repo Client</StyledLink>
-            <StyledLink to={website}>Website</StyledLink>
+            <StyledLink
+              target="_blank"
+              rel="noreferrer noopener"
+              href={repoClient}
+            >
+              Repo Client
+            </StyledLink>
+            <StyledLink
+              target="_blank"
+              rel="noreferrer noopener"
+              href={website}
+            >
+              Website
+            </StyledLink>
           </LinkWrapper>
         </DescriptionWrapper>
       </BottomSection>
