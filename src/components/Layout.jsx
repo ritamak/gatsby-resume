@@ -6,10 +6,12 @@ import Container from "@mui/material/Container";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: ${(props) => (props.theme === "white" ? "white" : "grey")};
+    background: white;
     margin:0px;
     font-family: "Prompt";
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   `;
 
@@ -31,12 +33,12 @@ const StyledContainer = styled(Container)`
 
 export default function Layout({ children }) {
   return (
-    <div>
-      <GlobalStyle theme="white" />
+    <>
+      <GlobalStyle />
       <Navbar />
       <StyledContainer>
         <PageWrapper> {children}</PageWrapper>
       </StyledContainer>
-    </div>
+    </>
   );
 }
