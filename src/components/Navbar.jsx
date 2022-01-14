@@ -13,8 +13,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "gatsby";
 
-const pages = ["Projects", "About"];
-
 const StyledAppBar = styled(AppBar)`
   background: transparent !important;
   border: none !important;
@@ -23,13 +21,17 @@ const StyledAppBar = styled(AppBar)`
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: "Prompt";
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: #fff;
   background: #7664a8;
-  padding: 10px;
+  padding: 2px 10px 2px 10px;
   border-radius: 10px;
 `;
 
@@ -100,11 +102,24 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <StyledLinkButton
+                  to="/projects"
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "black", display: "block" }}
+                >
+                  Projects
+                </StyledLinkButton>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <StyledLinkButton
+                  to="/about"
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "black", display: "block" }}
+                >
+                  About
+                </StyledLinkButton>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -114,7 +129,7 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            <Link to="/">RITABOOK</Link>
+            <StyledLinkButton to="/">RITABOOK</StyledLinkButton>
           </Typography>
           <StyledBox sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <StyledLinkButton
@@ -132,7 +147,6 @@ const Navbar = () => {
               About
             </StyledLinkButton>
           </StyledBox>
-
           <Box sx={{ flexGrow: 0 }}>
             <StyledLink to="/contact">Contact</StyledLink>
           </Box>

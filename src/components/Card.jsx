@@ -8,6 +8,54 @@ import {
 } from "@mui/material";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import styled from "styled-components";
+
+const StyledCard = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 10px 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+`;
+
+const StyledTypography = styled(Typography)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  text-align: justify;
+`;
+
+const ImageWrapper = styled.div`
+  min-height: 130px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 600px) {
+    min-height: 200px;
+  }
+  @media (min-width: 960px) {
+    min-height: 160px;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #fff;
+  background: #7664a8;
+  padding: 0px 10px 0px 10px;
+  border-radius: 10px;
+`;
+
+const StyledCardContent = styled(CardContent)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default function ProjectCard({
   title,
@@ -17,21 +65,23 @@ export default function ProjectCard({
   index,
 }) {
   return (
-    <Grid item xs={4} sm={4} md={4} key={index}>
-      <Card>
-        <GatsbyImage image={image} alt={title} />
-        <CardContent>
+    <Grid item xs={10} sm={5} md={3} key={index}>
+      <StyledCard>
+        <ImageWrapper>
+          <GatsbyImage image={image} alt={name} />
+        </ImageWrapper>
+        <StyledCardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {name}
+            {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <StyledTypography variant="body2" color="text.secondary">
             {shortDescription}
-          </Typography>
-        </CardContent>
+          </StyledTypography>
+        </StyledCardContent>
         <CardActions>
-          <Link to={`/${name}`}>Learn More</Link>
+          <StyledLink to={`/${name}`}>Learn More</StyledLink>
         </CardActions>
-      </Card>
+      </StyledCard>
     </Grid>
   );
 }

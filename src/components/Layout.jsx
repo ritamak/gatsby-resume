@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Container from "@mui/material/Container";
 
 const GlobalStyle = createGlobalStyle`
@@ -15,11 +14,12 @@ const GlobalStyle = createGlobalStyle`
   `;
 
 const PageWrapper = styled.div`
-  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 1200px;
+  margin-top: 40px;
+  margin-bottom: 100px;
 `;
 
 const StyledContainer = styled(Container)`
@@ -37,7 +37,6 @@ export default function Layout({ children }) {
       <StyledContainer>
         <PageWrapper> {children}</PageWrapper>
       </StyledContainer>
-      <Footer />
     </div>
   );
 }

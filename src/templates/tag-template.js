@@ -2,6 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import Card from "../components/Card";
 import styled from "styled-components";
+import { Chip, Grid } from "@mui/material";
+import AllTags from "../components/AllTags";
 
 const Container = styled.section`
   display: flex;
@@ -11,25 +13,46 @@ const Container = styled.section`
   align-items: center;
   gap: 20px;
   width: 100%;
+  margin-top: 50px;
+`;
+
+const PageWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 0px;
+  width: 100%;
+`;
+
+const Title = styled.h1`
+  line-height: 0px;
+  margin: 0px;
 `;
 
 const TagTemplate = ({ data, pageContext }) => {
   const projects = data.allContentfulProject.nodes;
   console.log(projects);
+  const { tag } = pageContext;
   return (
-    <Container>
-      {projects.map((project, index) => {
-        return (
-          <Card
-            title={project.title}
-            image={project.image.gatsbyImageData}
-            name={project.name}
-            shortDescription={project.shortDescription.shortDescription}
-            index={index}
-          />
-        );
-      })}
-    </Container>
+    <PageWrapper>
+      <Title>#{tag}</Title>
+      <Container>
+        {projects.map((project, index) => {
+          return (
+            <Card
+              key={index}
+              title={project.title}
+              image={project.image.gatsbyImageData}
+              name={project.name}
+              shortDescription={project.shortDescription.shortDescription}
+              index={index}
+            />
+          );
+        })}
+      </Container>
+      <AllTags />
+    </PageWrapper>
   );
 };
 

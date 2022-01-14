@@ -7,12 +7,13 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center;
+  gap: 60px;
   padding: 20px;
   width: 100%;
   @media (min-width: 900px) {
     flex-direction: row;
+    align-items: flex-start;
   }
 `;
 
