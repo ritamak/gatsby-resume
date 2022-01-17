@@ -160,7 +160,7 @@ const Navbar = () => {
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
                 <StyledLinkButton
-                  to="/about"
+                  to="/contact"
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "black", display: "block" }}
                 >
