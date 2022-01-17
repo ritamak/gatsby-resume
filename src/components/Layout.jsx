@@ -33,12 +33,10 @@ const StyledContainer = styled(Container)`
 
 export default function Layout({ children }) {
   return (
-    <>
+    <StyledContainer>
       <GlobalStyle />
       <Navbar />
-      <StyledContainer>
-        <PageWrapper> {children}</PageWrapper>
-      </StyledContainer>
-    </>
+      <PageWrapper> {children}</PageWrapper>
+    </StyledContainer>
   );
 }
