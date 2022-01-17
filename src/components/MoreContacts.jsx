@@ -1,6 +1,6 @@
 import React from "react";
+import { Email, Phone } from "@mui/icons-material";
 import styled from "styled-components";
-import { GitHub, Email, LinkedIn, Instagram, Phone } from "@mui/icons-material";
 
 const Container = styled.section`
   display: flex;
@@ -13,6 +13,12 @@ const Container = styled.section`
 
 const StyledLink = styled.a`
   color: #7664a8;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: 2px;
 `;
 
 const PhoneLink = styled.a`
@@ -20,7 +26,6 @@ const PhoneLink = styled.a`
   position: relative;
   text-align: center;
   color: #7664a8;
-
   :hover:before {
     opacity: 1;
     transform: translate(0, 0);
@@ -28,13 +33,15 @@ const PhoneLink = styled.a`
   :before {
     content: attr(data-hover);
     position: absolute;
-    top: 0.2em;
+    top: 0.4em;
     left: 0;
+    width: 100%;
     font-weight: bolder;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1.4rem;
     opacity: 0;
+    transform: translate(-100%, 0);
     transition: all 0.3s ease-in-out;
   }
 
@@ -48,32 +55,14 @@ const PhoneLink = styled.a`
     font-size: 2em;
     transition: all 0.3s ease-in-out;
   }
+  div > svg {
+    height: 100%;
+  }
 `;
-const SocialMedia = () => {
+
+const MoreContacts = () => {
   return (
     <Container>
-      <StyledLink
-        href="https://www.instagram.com/ritapmak/"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Instagram />
-      </StyledLink>
-      <StyledLink
-        href="https://www.github.com/ritamak/"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <GitHub />
-      </StyledLink>
-      <StyledLink
-        href="https://www.linkedin.com/in/rita-mak/"
-        target="_blank"
-        rel="noreferrer noopener"
-        data-hover="linkedin"
-      >
-        <LinkedIn />
-      </StyledLink>
       <StyledLink
         href="mailto:ritapmak@gmail.com"
         target="_blank"
@@ -95,4 +84,4 @@ const SocialMedia = () => {
   );
 };
 
-export default SocialMedia;
+export default MoreContacts;

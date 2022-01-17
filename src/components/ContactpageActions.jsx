@@ -30,7 +30,7 @@ const ContactpageActions = () => {
         <Link to="/projects">personal projects</Link> or find out a bit more{" "}
         <Link to="/about">about</Link> me. <br></br>
         <br></br>
-        <b>Also, feel free to connect:</b>
+        <b>Also, feel free to connect or contact me via:</b>
       </Paragraph>
       <SocialMedia />
     </StyledWrapper>
