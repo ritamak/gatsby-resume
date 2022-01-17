@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 import Card from "../components/Card";
 import styled from "styled-components";
-import { Chip, Grid } from "@mui/material";
 import AllTags from "../components/AllTags";
 
 const Container = styled.section`

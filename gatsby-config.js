@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
