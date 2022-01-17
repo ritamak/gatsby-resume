@@ -132,6 +132,15 @@ const Navbar = () => {
                   about
                 </StyledLinkButton>
               </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <StyledLinkButton
+                  to="/about"
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "black", display: "block" }}
+                >
+                  contact
+                </StyledLinkButton>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -139,7 +148,7 @@ const Navbar = () => {
             noWrap
             style={{ color: "black" }}
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}
           >
             <NavLinkButton to="/">Ritabook</NavLinkButton>
           </Typography>
@@ -159,7 +168,7 @@ const Navbar = () => {
               about
             </StyledLinkButton>
           </StyledBox>
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
             <StyledLink to="/contact">contact</StyledLink>
           </Box>
         </Toolbar>
