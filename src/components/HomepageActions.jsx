@@ -24,9 +24,9 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: #fff;
   background: #7664a8;
-  padding: 10px;
-  width: 50%;
+  padding: 5px 10px;
   border-radius: 10px;
+  text-align: center;
 `;
 
 const Title = styled.h1`

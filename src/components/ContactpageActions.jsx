@@ -4,7 +4,7 @@ import SocialMedia from "../components/SocialMedia";
 import styled from "styled-components";
 
 const StyledWrapper = styled.section`
-  width: 450px;
+  max-width: 450px;
 
   @media (min-width: 900px) {
     width: 50%;

@@ -12,17 +12,24 @@ const PageWrapper = styled.section`
 `;
 
 const ImageWrapper = styled.section`
-  max-width: 40%;
+  max-width: 90%;
+  margin-bottom: 0px;
+  @media (min-width: 900px) {
+    max-width: 40%;
+  }
 `;
 
 const BannerContainer = styled.section`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 40px;
   background-color: #ebf8ff;
   padding: 20px;
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
 `;
 
 const BannerTextWrapper = styled.section`
@@ -40,6 +47,10 @@ const StyledTitle = styled.h1`
 
 const LongDescription = styled.p`
   text-align: justify;
+  margin-top: 0px;
+  @media (min-width: 900px) {
+    margin-top: 30px;
+  }
 `;
 
 const LinkWrapper = styled.section`
@@ -52,16 +63,22 @@ const StyledLink = styled.a`
   text-decoration: none;
   color: #fff;
   background: #7664a8;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
+  text-align: center;
 `;
 
 const TagContainer = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 20%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @media (min-width: 900px) {
+    width: 20%;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 const TagWrapper = styled.section`
@@ -70,23 +87,44 @@ const TagWrapper = styled.section`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 4px;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 900px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 const BottomSection = styled.section`
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column-reverse;
+  justify-content: space-between;
   align-items: flex-start;
   margin-top: 40px;
   gap: 30px;
+  @media (min-width: 900px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 `;
 
 const DescriptionWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   justify-content: center;
   align-items: flex-end;
+  @media (min-width: 900px) {
+    width: 80%;
+  }
+`;
+
+const TagLink = styled(Link)`
+  text-decoration: none;
+`;
+
+const ShortDescription = styled.p`
+  text-align: justify;
 `;
 
 const DetailedProject = ({
@@ -106,7 +144,7 @@ const DetailedProject = ({
         </ImageWrapper>
         <BannerTextWrapper>
           <StyledTitle>{title}</StyledTitle>
-          <p>{shortDescription}</p>
+          <ShortDescription>{shortDescription}</ShortDescription>
         </BannerTextWrapper>
       </BannerContainer>
       <BottomSection>
@@ -116,7 +154,7 @@ const DetailedProject = ({
             {tags.map((tag, index) => {
               return (
                 <Grid key={index}>
-                  <Link to={`/tags/${tag}`}>
+                  <TagLink to={`/tags/${tag}`}>
                     <Chip
                       label={tag}
                       component="a"
@@ -124,7 +162,7 @@ const DetailedProject = ({
                       variant="outlined"
                       clickable
                     />
-                  </Link>
+                  </TagLink>
                 </Grid>
               );
             })}
