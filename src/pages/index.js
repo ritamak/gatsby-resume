@@ -5,12 +5,12 @@ import HomepageActions from "../components/HomepageActions";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px 20px 0px 20px;
 `;
 
 const IndexPage = () => {
