@@ -30,6 +30,10 @@ const Title = styled.h1`
   margin: 0px;
 `;
 
+const TitleWrapper = styled.section`
+  background-color: transparent;
+`;
+
 const TagTemplate = ({ data, pageContext }) => {
   const projects = data.allContentfulProject.nodes;
   console.log(projects);
@@ -38,7 +42,9 @@ const TagTemplate = ({ data, pageContext }) => {
     <>
       <Seo title={tag} />
       <PageWrapper>
-        <Title>#{tag}</Title>
+        <TitleWrapper>
+          <Title>#{tag}</Title>
+        </TitleWrapper>
         <Container>
           {projects.map((project, index) => {
             return (
