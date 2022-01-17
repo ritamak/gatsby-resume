@@ -5,7 +5,7 @@ import Seo from "../components/SEO";
 
 const aboutRita = [
   {
-    title: "Who am I?",
+    title: "Who am I",
     description: `My name is Rita Mak, I'm 29 years old and I'm a portuguese Web
 Developer with a background in Event Production (I used to be an event
 producer until the covid-19 appeared...)`,
