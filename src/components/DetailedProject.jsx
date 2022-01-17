@@ -43,6 +43,7 @@ const StyledTitle = styled.h1`
   font-size: 2rem;
   line-height: 0;
   color: #7664a8;
+  font-family: "Mochiy Pop P One";
 `;
 
 const LongDescription = styled.p`
@@ -176,14 +177,14 @@ const DetailedProject = ({
               rel="noreferrer noopener"
               href={repoClient}
             >
-              Repo Client
+              repo
             </StyledLink>
             <StyledLink
               target="_blank"
               rel="noreferrer noopener"
               href={website}
             >
-              Website
+              website
             </StyledLink>
           </LinkWrapper>
         </DescriptionWrapper>

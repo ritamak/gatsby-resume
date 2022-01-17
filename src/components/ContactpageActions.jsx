@@ -13,6 +13,7 @@ const StyledWrapper = styled.section`
 
 const Title = styled.h1`
   font-size: 2rem;
+  margin-top: 0px;
 `;
 
 const Paragraph = styled.p`
@@ -25,9 +26,9 @@ const ContactpageActions = () => {
       <Title>Want to get in touch?</Title>
       <Paragraph>
         I'll get back to you as soon as possible. In the meantime, and if you
-        already didn't, check out some of my
-        <Link to="/projects"> personal projects</Link> or find out a bit more
-        <Link to="/about"> about</Link> me. <br></br>
+        already didn't, check out some of my{" "}
+        <Link to="/projects">personal projects</Link> or find out a bit more{" "}
+        <Link to="/about">about</Link> me. <br></br>
         <br></br>
         <b>Also, feel free to connect:</b>
       </Paragraph>

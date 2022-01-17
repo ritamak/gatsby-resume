@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Prompt`],
+        fonts: [`Prompt`, "Mochiy Pop P One"],
         display: "swap",
       },
     },

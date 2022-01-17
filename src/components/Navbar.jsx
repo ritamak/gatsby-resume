@@ -20,7 +20,7 @@ const StyledAppBar = styled(AppBar)`
   color: black !important;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-family: "Prompt";
+  font-family: "Mochiy Pop P One";
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -33,12 +33,20 @@ const StyledLink = styled(Link)`
   background: #7664a8;
   padding: 2px 10px 2px 10px;
   border-radius: 10px;
+  font-family: "Mochiy Pop P One";
 `;
 
 const StyledLinkButton = styled(Link)`
-  font-family: "Prompt" !important;
+  font-family: "Mochiy Pop P One" !important;
   text-decoration: none;
   color: black !important;
+`;
+
+const NavLinkButton = styled(Link)`
+  font-family: "Mochiy Pop P One", cursive !important;
+  text-decoration: none;
+  color: black !important;
+  font-size: 2rem;
 `;
 
 const StyledBox = styled(Box)`
@@ -49,6 +57,10 @@ const StyledBox = styled(Box)`
   margin-left: 30px;
 `;
 
+const NavTitle = styled(Typography)`
+  font-size: 2rem !important;
+  font-family: "Mochiy Pop P One", cursive !important;
+`;
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -65,14 +77,14 @@ const Navbar = () => {
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <StyledLinkButton to="/">
-            <Typography
+            <NavTitle
               variant="h6"
               noWrap
               component="div"
               sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
             >
-              RITABOOK
-            </Typography>
+              Ritabook
+            </NavTitle>
           </StyledLinkButton>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -108,7 +120,7 @@ const Navbar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "black", display: "block" }}
                 >
-                  Projects
+                  projects
                 </StyledLinkButton>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
@@ -117,7 +129,7 @@ const Navbar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "black", display: "block" }}
                 >
-                  About
+                  about
                 </StyledLinkButton>
               </MenuItem>
             </Menu>
@@ -129,7 +141,7 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            <StyledLinkButton to="/">RITABOOK</StyledLinkButton>
+            <NavLinkButton to="/">Ritabook</NavLinkButton>
           </Typography>
           <StyledBox sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <StyledLinkButton
@@ -137,18 +149,18 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              Projects
+              projects
             </StyledLinkButton>
             <StyledLinkButton
               to="/about"
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              About
+              about
             </StyledLinkButton>
           </StyledBox>
           <Box sx={{ flexGrow: 0 }}>
-            <StyledLink to="/contact">Contact</StyledLink>
+            <StyledLink to="/contact">contact</StyledLink>
           </Box>
         </Toolbar>
       </Container>

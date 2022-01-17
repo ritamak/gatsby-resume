@@ -20,7 +20,7 @@ const PageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 1200px;
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: 100px;
 `;
 

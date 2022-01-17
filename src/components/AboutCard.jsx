@@ -11,7 +11,7 @@ const Card = styled.section`
   background: ${(props) => (props.right ? "white" : "#ebf8ff")};
 `;
 
-const Title = styled.h3`
+const Title = styled.p`
   background: #7664a8;
   border-radius: 10px;
   padding: 10px;
@@ -20,6 +20,7 @@ const Title = styled.h3`
   flex-direction: row;
   justify-content: ${(props) => (props.right ? "flex-end" : "flex-start")};
   align-items: center;
+  font-family: "Mochiy Pop P One";
 `;
 
 const Paragraph = styled.p`

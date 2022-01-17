@@ -117,7 +117,7 @@ const ContactForm = () => {
               </Grid>
               <Grid item xs={12}>
                 <StyledButton type="submit" variant="contained" fullWidth>
-                  Submit
+                  submit
                 </StyledButton>
               </Grid>
             </Grid>

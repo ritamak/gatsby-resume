@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-  Grid,
-} from "@mui/material";
+import { Card, CardContent, Typography, Grid } from "@mui/material";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
@@ -14,7 +8,7 @@ const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   padding: 0px 0px 10px 0px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
 `;
@@ -44,10 +38,10 @@ const ImageWrapper = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #fff;
-  background: #7664a8;
-  padding: 0px 10px 0px 10px;
-  border-radius: 10px;
+  opacity: 0.8;
+  :hover {
+    opacity: 1;
+  }
 `;
 
 const StyledCardContent = styled(CardContent)`
@@ -66,22 +60,21 @@ export default function ProjectCard({
 }) {
   return (
     <Grid item xs={10} sm={5} md={3} key={index}>
-      <StyledCard>
-        <ImageWrapper>
-          <GatsbyImage image={image} alt={name} />
-        </ImageWrapper>
-        <StyledCardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {title}
-          </Typography>
-          <StyledTypography variant="body2" color="text.secondary">
-            {shortDescription}
-          </StyledTypography>
-        </StyledCardContent>
-        <CardActions>
-          <StyledLink to={`/${name}`}>Learn More</StyledLink>
-        </CardActions>
-      </StyledCard>
+      <StyledLink to={`/${name}`}>
+        <StyledCard>
+          <ImageWrapper>
+            <GatsbyImage image={image} alt={name} />
+          </ImageWrapper>
+          <StyledCardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {title}
+            </Typography>
+            <StyledTypography variant="body2" color="text.secondary">
+              {shortDescription}
+            </StyledTypography>
+          </StyledCardContent>
+        </StyledCard>
+      </StyledLink>
     </Grid>
   );
 }
