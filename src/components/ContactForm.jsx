@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   Grid,
   Button,
@@ -6,6 +6,7 @@ import {
   CardContent,
   Typography,
   TextField,
+  Alert,
 } from "@mui/material";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
@@ -16,6 +17,9 @@ const StyledButton = styled(Button)`
 
 const ContactForm = () => {
   const form = useRef();
+  const [messageSent, setMessageSent] = useState(false);
+  const [formInvalid, setFormInvalid] = useState(false);
+  const [emailInvalid, setEmailInvalid] = useState(false);
 
   const isNotEmpty = (value) => value.trim() !== "";
   const emailRgx = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -34,10 +38,12 @@ const ContactForm = () => {
       !isNotEmpty(newMessage.email) ||
       !isNotEmpty(newMessage.message)
     ) {
+      setFormInvalid(true);
       return;
     }
 
     if (!isEmail(newMessage.email)) {
+      setEmailInvalid(true);
       return;
     }
     emailjs
@@ -49,10 +55,13 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          from_name.value = "";
+          email.value = "";
+          message.value = "";
+          setMessageSent(true);
         },
         (error) => {
-          console.log(error.text);
+          console.error(error.text);
         }
       );
   };
@@ -79,27 +88,34 @@ const ContactForm = () => {
           >
             <b>All field are required.</b>
           </Typography>
+          <br></br>
+
           <form ref={form} autoComplete="off" onSubmit={submitFormHandler}>
             <Grid container spacing={1}>
               <Grid item xs={12}>
                 <TextField
+                  required
                   placeholder="Enter name"
                   label="Name"
                   variant="outlined"
                   fullWidth
-                  required
+                  onChange={() => setFormInvalid(false)}
                   name="from_name"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  required
                   type="email"
                   placeholder="Enter email"
                   label="Email"
                   variant="outlined"
                   fullWidth
-                  required
                   name="email"
+                  onChange={() => {
+                    setFormInvalid(false);
+                    setEmailInvalid(false);
+                  }}
                 />
               </Grid>
 
@@ -111,8 +127,8 @@ const ContactForm = () => {
                   placeholder="Type your message here"
                   variant="outlined"
                   fullWidth
-                  required
                   name="message"
+                  onChange={() => setFormInvalid(false)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -122,6 +138,19 @@ const ContactForm = () => {
               </Grid>
             </Grid>
           </form>
+          {formInvalid && (
+            <Alert severity="warning" style={{ marginTop: "20px" }}>
+              All fields are required
+            </Alert>
+          )}
+          {emailInvalid && (
+            <Alert severity="warning" style={{ marginTop: "20px" }}>
+              Invalid email format
+            </Alert>
+          )}
+          {messageSent && (
+            <Alert style={{ marginTop: "20px" }}>Your message was sent!</Alert>
+          )}
         </CardContent>
       </Card>
     </Grid>
