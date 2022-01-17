@@ -2,7 +2,7 @@
 
 Rita's online resume, to send to companies when applying to job vacancies. It was used Gatsby to develop the project and it is deployed [here](https://ritamak.gatsbyjs.io/).
 
-It consists in:
+## Pages
 
 #### /
 - Home page.
