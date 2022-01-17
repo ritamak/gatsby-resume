@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import DetailedProject from "../components/DetailedProject";
+import Seo from "../components/SEO";
 
 const Project = ({ data }) => {
   const {
@@ -21,6 +22,7 @@ const Project = ({ data }) => {
 
   return (
     <>
+      <Seo title={name} />
       <DetailedProject
         tags={tags}
         website={website}

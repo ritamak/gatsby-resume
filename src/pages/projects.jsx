@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../components/Card";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
+import Seo from "../components/SEO";
 
 const Container = styled.section`
   display: flex;
@@ -17,19 +18,22 @@ const Projects = () => {
   const { allContentfulProject } = useStaticQuery(query);
 
   return (
-    <Container>
-      {allContentfulProject.nodes.map((project, index) => {
-        return (
-          <Card
-            title={project.title}
-            image={project.image.gatsbyImageData}
-            name={project.name}
-            shortDescription={project.shortDescription.shortDescription}
-            index={index}
-          />
-        );
-      })}
-    </Container>
+    <>
+      <Seo title="projects" />
+      <Container>
+        {allContentfulProject.nodes.map((project, index) => {
+          return (
+            <Card
+              title={project.title}
+              image={project.image.gatsbyImageData}
+              name={project.name}
+              shortDescription={project.shortDescription.shortDescription}
+              index={index}
+            />
+          );
+        })}
+      </Container>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import AboutCard from "../components/AboutCard";
 import styled from "styled-components";
+import Seo from "../components/SEO";
 
 const aboutRita = [
   {
@@ -64,29 +65,32 @@ const Container = styled.section`
 
 const about = () => {
   return (
-    <Container>
-      {aboutRita.map((el, index) => {
-        console.log("index: ", index);
-        if (index % 2 !== 0) {
-          return (
-            <AboutCard
-              right
-              key={index}
-              title={el.title.toUpperCase()}
-              description={el.description}
-            />
-          );
-        } else {
-          return (
-            <AboutCard
-              key={index}
-              title={el.title.toUpperCase()}
-              description={el.description}
-            />
-          );
-        }
-      })}
-    </Container>
+    <>
+      <Seo title="about" />
+      <Container>
+        {aboutRita.map((el, index) => {
+          console.log("index: ", index);
+          if (index % 2 !== 0) {
+            return (
+              <AboutCard
+                right
+                key={index}
+                title={el.title.toUpperCase()}
+                description={el.description}
+              />
+            );
+          } else {
+            return (
+              <AboutCard
+                key={index}
+                title={el.title.toUpperCase()}
+                description={el.description}
+              />
+            );
+          }
+        })}
+      </Container>
+    </>
   );
 };
 

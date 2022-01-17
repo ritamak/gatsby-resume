@@ -2,6 +2,7 @@ import React from "react";
 import ContactForm from "../components/ContactForm";
 import ContactpageActions from "../components/ContactpageActions";
 import styled from "styled-components";
+import Seo from "../components/SEO";
 
 const Container = styled.section`
   display: flex;
@@ -19,10 +20,13 @@ const Container = styled.section`
 
 const contact = () => {
   return (
-    <Container>
-      <ContactpageActions />
-      <ContactForm />
-    </Container>
+    <>
+      <Seo title="contact" />
+      <Container>
+        <ContactpageActions />
+        <ContactForm />
+      </Container>
+    </>
   );
 };
 

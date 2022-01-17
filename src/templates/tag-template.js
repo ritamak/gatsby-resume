@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Card from "../components/Card";
 import styled from "styled-components";
 import AllTags from "../components/AllTags";
+import Seo from "../components/SEO";
 
 const Container = styled.section`
   display: flex;
@@ -34,24 +35,27 @@ const TagTemplate = ({ data, pageContext }) => {
   console.log(projects);
   const { tag } = pageContext;
   return (
-    <PageWrapper>
-      <Title>#{tag}</Title>
-      <Container>
-        {projects.map((project, index) => {
-          return (
-            <Card
-              key={index}
-              title={project.title}
-              image={project.image.gatsbyImageData}
-              name={project.name}
-              shortDescription={project.shortDescription.shortDescription}
-              index={index}
-            />
-          );
-        })}
-      </Container>
-      <AllTags />
-    </PageWrapper>
+    <>
+      <Seo title={tag} />
+      <PageWrapper>
+        <Title>#{tag}</Title>
+        <Container>
+          {projects.map((project, index) => {
+            return (
+              <Card
+                key={index}
+                title={project.title}
+                image={project.image.gatsbyImageData}
+                name={project.name}
+                shortDescription={project.shortDescription.shortDescription}
+                index={index}
+              />
+            );
+          })}
+        </Container>
+        <AllTags />
+      </PageWrapper>
+    </>
   );
 };
 
