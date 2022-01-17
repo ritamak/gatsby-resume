@@ -5,10 +5,11 @@ Rita's online resume, to send to companies when applying to job vacancies. It wa
 It consists in:
 
 - Home page.
-- Contacts page with a form to contact me (via email) and some of my social media links;
-- Projects page with some of my personal and professional (during the web development bootcamp) projects (repositories and websites).
-- Detailed project page with more details on the project and all the tags;
-- Tags page if you want so search for a project by tag (ex: projects using #Materialui)
+- Contacts page with a form to contact me (via email) and some of my social media links; #### /
+- Projects page with some of my personal and professional (during the web development bootcamp) projects (repositories and websites). #### /projects
+- About page with more info about me #### /about
+- Detailed project page with more details on the project and all the tags; #### /${project_name}
+- Tags page if you want so search for a project by tag (ex: projects using #Materialui) #### /tags/${tag_name}
 
 ## Installation
 
