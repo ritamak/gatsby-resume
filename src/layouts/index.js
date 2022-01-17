@@ -22,6 +22,9 @@ const PageWrapper = styled.div`
   max-width: 1200px;
   margin-top: 50px;
   margin-bottom: 100px;
+  @media (min-width: 900px) {
+    margin-top: 0px;
+  }
 `;
 
 const StyledContainer = styled(Container)`

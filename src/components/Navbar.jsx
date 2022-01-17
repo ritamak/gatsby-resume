@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const StyledAppBar = styled(AppBar)`
   background: transparent !important;
@@ -47,6 +48,11 @@ const NavLinkButton = styled(Link)`
   text-decoration: none;
   color: black !important;
   font-size: 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledBox = styled(Box)`
@@ -60,7 +66,20 @@ const StyledBox = styled(Box)`
 const NavTitle = styled(Typography)`
   font-size: 2rem !important;
   font-family: "Mochiy Pop P One", cursive !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 `;
+
+const RitaImageWrapper = styled.div`
+  width: 70px;
+  @media (min-width: 900px) {
+    width: 150px;
+  }
+`;
+
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -83,6 +102,13 @@ const Navbar = () => {
               component="div"
               sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
             >
+              <RitaImageWrapper>
+                <StaticImage
+                  src="https://avatars.githubusercontent.com/u/83585556?s=400&u=9eac9ac580c7f3c1cdb5e34da5a9652c7d7fe2cb&v=4"
+                  alt="Rita Mak"
+                  style={{ borderRadius: "200px" }}
+                />
+              </RitaImageWrapper>
               Ritabook
             </NavTitle>
           </StyledLinkButton>
@@ -150,7 +176,16 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}
           >
-            <NavLinkButton to="/">Ritabook</NavLinkButton>
+            <NavLinkButton to="/">
+              <RitaImageWrapper>
+                <StaticImage
+                  src="https://avatars.githubusercontent.com/u/83585556?s=400&u=9eac9ac580c7f3c1cdb5e34da5a9652c7d7fe2cb&v=4"
+                  alt="Rita Mak"
+                  style={{ borderRadius: "200px" }}
+                />
+              </RitaImageWrapper>
+              Ritabook
+            </NavLinkButton>
           </Typography>
           <StyledBox sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <StyledLinkButton
