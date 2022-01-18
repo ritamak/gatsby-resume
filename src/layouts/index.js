@@ -20,8 +20,11 @@ const PageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 1200px;
-  margin-top: 50px;
+  margin-top: 10px;
   margin-bottom: 100px;
+  @media (min-width: 900px) {
+    margin-top: 50px;
+  }
 `;
 
 const StyledContainer = styled(Container)`

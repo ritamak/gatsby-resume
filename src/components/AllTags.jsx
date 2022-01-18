@@ -26,6 +26,7 @@ const TagWrapper = styled.section`
 
 const StyledLink = styled(Link)`
   cursor: pointer;
+  text-decoration: none;
 `;
 
 const AllTags = () => {
