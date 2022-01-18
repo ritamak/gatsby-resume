@@ -22,9 +22,6 @@ const PageWrapper = styled.div`
   max-width: 1200px;
   margin-top: 50px;
   margin-bottom: 100px;
-  @media (min-width: 900px) {
-    margin-top: 0px;
-  }
 `;
 
 const StyledContainer = styled(Container)`
@@ -43,15 +40,3 @@ export default function Layout({ children }) {
     </StyledContainer>
   );
 }
-
-/*
-gatsby-browser
-const React = require("react");
-const Layout = require("./src/components/Layout").default;
-
-exports.wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>;
-};
-
-
-*/

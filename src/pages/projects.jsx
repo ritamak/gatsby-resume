@@ -1,8 +1,9 @@
 import React from "react";
 import Card from "../components/Card";
+import GoToTopButton from "../components/GoToTopButton";
+import Seo from "../components/SEO";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
-import Seo from "../components/SEO";
 
 const Container = styled.section`
   display: flex;
@@ -32,6 +33,7 @@ const Projects = () => {
             />
           );
         })}
+        <GoToTopButton />
       </Container>
     </>
   );

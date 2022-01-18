@@ -32,7 +32,6 @@ const Title = styled.h1`
 
 const TagTemplate = ({ data, pageContext }) => {
   const projects = data.allContentfulProject.nodes;
-  console.log(projects);
   const { tag } = pageContext;
   return (
     <>
