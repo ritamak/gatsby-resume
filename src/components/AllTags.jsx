@@ -21,7 +21,7 @@ const TagWrapper = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 10px;
+  gap: 5px;
 `;
 
 const StyledLink = styled(Link)`

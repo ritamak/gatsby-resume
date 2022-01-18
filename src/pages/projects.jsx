@@ -47,22 +47,21 @@ const query = graphql`
       nodes {
         date
         id
-        image {
-          gatsbyImageData
-          title
+        name
+        repoClient
+        shortDescription {
+          shortDescription
         }
         website
         title
         tags {
           tags
         }
-        shortDescription {
-          shortDescription
-        }
-        repoClient
-        name
         longDescription {
           longDescription
+        }
+        image {
+          gatsbyImageData(placeholder: BLURRED)
         }
       }
     }

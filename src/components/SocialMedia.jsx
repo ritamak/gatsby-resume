@@ -7,8 +7,11 @@ const Container = styled.section`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
+  @media (min-width: 900px) {
+    gap: 20px;
+  }
 `;
 
 const StyledLink = styled.a`

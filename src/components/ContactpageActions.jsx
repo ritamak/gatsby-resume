@@ -12,12 +12,13 @@ const StyledWrapper = styled.section`
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 0px;
 `;
 
 const Paragraph = styled.p`
   text-align: justify;
+  font-size: 1rem;
 `;
 
 const ContactpageActions = () => {

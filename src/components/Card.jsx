@@ -13,26 +13,33 @@ const StyledCard = styled(Card)`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
 `;
 
-const StyledTypography = styled(Typography)`
+const Title = styled(Typography)`
+  font-family: "Prompt" !important;
+  margin-top: 2px !important;
+`;
+
+const Description = styled(Typography)`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3; /* number of lines to show */
   -webkit-box-orient: vertical;
   text-align: justify;
+  font-family: "Prompt" !important;
 `;
 
 const ImageWrapper = styled.div`
-  min-height: 130px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   @media (min-width: 600px) {
-    min-height: 200px;
+    min-height: 140px;
+    max-height: 140px;
   }
   @media (min-width: 960px) {
-    min-height: 160px;
+    min-height: 150px;
+    max-height: 150px;
   }
 `;
 
@@ -66,12 +73,12 @@ export default function ProjectCard({
             <GatsbyImage image={image} alt={name} />
           </ImageWrapper>
           <StyledCardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Title gutterBottom variant="h5" component="div">
               {title}
-            </Typography>
-            <StyledTypography variant="body2" color="text.secondary">
+            </Title>
+            <Description variant="body2" color="text.secondary">
               {shortDescription}
-            </StyledTypography>
+            </Description>
           </StyledCardContent>
         </StyledCard>
       </StyledLink>

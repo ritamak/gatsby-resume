@@ -82,7 +82,7 @@ const TopWrapper = styled.section`
 const AboutCardWrapper = styled.div``;
 
 const StyledLink = styled(Link)`
-  font-size: 1em;
+  font-size: 0.8rem;
   border: 2px solid #7664a8;
   padding: 2px 10px;
   border-radius: 15px;

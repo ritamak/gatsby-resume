@@ -14,8 +14,12 @@ const ButtonWrapper = styled.section`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  gap: 20px;
+  width: 100%;
+  gap: 10px;
+  flex-wrap: wrap;
+  @media (min-width: 900px) {
+    gap: 20px;
+  }
 `;
 
 const TextWrapper = styled.section`
@@ -37,17 +41,25 @@ const StyledLink = styled(Link)`
   border-radius: 10px;
   text-align: center;
   font-family: "Mochiy Pop P One";
+  font-size: 0.8em !important;
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 0px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-top: 40px;
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-align: justify;
+  margin-bottom: 40px;
+
+  @media (min-width: 900px) {
+    margin-bottom: 20px;
+  }
 `;
+
 const HomepageActions = () => {
   return (
     <Container>

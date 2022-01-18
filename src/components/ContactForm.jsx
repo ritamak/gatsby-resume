@@ -13,6 +13,15 @@ import emailjs from "@emailjs/browser";
 
 const StyledButton = styled(Button)`
   background-color: #7664a8 !important;
+  font-family: "Prompt" !important;
+`;
+
+const StyledTypography = styled(Typography)`
+  font-family: "Prompt" !important;
+`;
+
+const StyledTextField = styled(TextField)`
+  font-family: "Prompt" !important;
 `;
 
 const ContactForm = () => {
@@ -74,26 +83,27 @@ const ContactForm = () => {
           maxWidth: 450,
           padding: "20px 5px",
           margin: "0 auto",
+          borderRadius: "15px",
         }}
       >
         <CardContent>
-          <Typography gutterBottom variant="h5">
+          <StyledTypography gutterBottom variant="h5">
             Let's talk!
-          </Typography>
-          <Typography
+          </StyledTypography>
+          <StyledTypography
             variant="body2"
             color="textSecondary"
             component="p"
             gutterBottom
           >
             <b>All field are required.</b>
-          </Typography>
+          </StyledTypography>
           <br></br>
 
           <form ref={form} autoComplete="off" onSubmit={submitFormHandler}>
             <Grid container spacing={1}>
               <Grid item xs={12}>
-                <TextField
+                <StyledTextField
                   required
                   placeholder="Enter name"
                   label="Name"
@@ -104,7 +114,7 @@ const ContactForm = () => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <StyledTextField
                   required
                   type="email"
                   placeholder="Enter email"
@@ -118,9 +128,8 @@ const ContactForm = () => {
                   }}
                 />
               </Grid>
-
               <Grid item xs={12}>
-                <TextField
+                <StyledTextField
                   label="Message"
                   multiline
                   rows={4}
@@ -139,17 +148,25 @@ const ContactForm = () => {
             </Grid>
           </form>
           {formInvalid && (
-            <Alert severity="warning" style={{ marginTop: "20px" }}>
+            <Alert
+              severity="warning"
+              style={{ marginTop: "20px", fontFamily: "Prompt" }}
+            >
               All fields are required
             </Alert>
           )}
           {emailInvalid && (
-            <Alert severity="warning" style={{ marginTop: "20px" }}>
+            <Alert
+              severity="warning"
+              style={{ marginTop: "20px", fontFamily: "Prompt" }}
+            >
               Invalid email format
             </Alert>
           )}
           {messageSent && (
-            <Alert style={{ marginTop: "20px" }}>Your message was sent!</Alert>
+            <Alert style={{ marginTop: "20px", fontFamily: "Prompt" }}>
+              Your message was sent!
+            </Alert>
           )}
         </CardContent>
       </Card>

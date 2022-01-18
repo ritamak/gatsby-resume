@@ -21,11 +21,13 @@ const Title = styled.p`
   justify-content: ${(props) => (props.right ? "flex-end" : "flex-start")};
   align-items: center;
   font-family: "Mochiy Pop P One";
+  font-size: 1rem;
 `;
 
 const Paragraph = styled.p`
   text-align: justify;
   margin-top: 0px;
+  font-size: 1rem;
 `;
 
 const AboutCard = ({ title, description, right }) => {

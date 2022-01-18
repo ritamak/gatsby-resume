@@ -27,6 +27,7 @@ const BannerContainer = styled.section`
   gap: 40px;
   background-color: #ebf8ff;
   padding: 20px;
+  border-radius: 15px;
   @media (min-width: 900px) {
     flex-direction: row;
   }
@@ -40,15 +41,21 @@ const BannerTextWrapper = styled.section`
 `;
 
 const StyledTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 0;
   color: #7664a8;
   font-family: "Mochiy Pop P One";
+  margin-top: 5px;
+  margin-bottom: 35px;
+  @media (min-width: 900px) {
+    margin-top: 30px;
+  }
 `;
 
 const LongDescription = styled.p`
   text-align: justify;
   margin-top: 0px;
+  font-size: 1rem;
   @media (min-width: 900px) {
     margin-top: 30px;
   }
@@ -64,9 +71,10 @@ const StyledLink = styled.a`
   text-decoration: none;
   color: #fff;
   background: #7664a8;
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 10px;
   text-align: center;
+  font-size: 0.8em !important;
 `;
 
 const TagContainer = styled.section`
@@ -126,6 +134,7 @@ const TagLink = styled(Link)`
 
 const ShortDescription = styled.p`
   text-align: justify;
+  font-size: 1rem;
 `;
 
 const DetailedProject = ({
