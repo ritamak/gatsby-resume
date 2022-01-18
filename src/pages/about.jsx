@@ -79,7 +79,9 @@ const TopWrapper = styled.section`
   flex-wrap: wrap;
 `;
 
-const AboutCardWrapper = styled.div``;
+const AboutCardWrapper = styled.div`
+  width: 100%;
+`;
 
 const StyledLink = styled(Link)`
   font-size: 0.8rem;
