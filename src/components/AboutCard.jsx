@@ -4,6 +4,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 const Card = styled.section`
+  border-radius: 15px;
   display: flex;
   align-items: ${(props) => (props.right ? "flex-end" : "flex-start")};
   flex-direction: column;

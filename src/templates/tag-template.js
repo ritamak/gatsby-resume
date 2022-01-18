@@ -28,6 +28,7 @@ const PageWrapper = styled.section`
 const Title = styled.h1`
   line-height: 0px;
   margin: 0px;
+  font-size: 1rem;
 `;
 
 const TagTemplate = ({ data, pageContext }) => {
