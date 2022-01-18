@@ -90,6 +90,7 @@ const StyledLink = styled(Link)`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 const ListWrapper = styled.div`

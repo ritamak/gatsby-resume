@@ -20,6 +20,7 @@ const StyledButton = styled.button`
   justify-self: flex-end;
   border: none;
   background: transparent;
+  cursor: pointer;
 `;
 
 const StyledArrowCircleUpIcon = styled(ArrowCircleUpIcon)`

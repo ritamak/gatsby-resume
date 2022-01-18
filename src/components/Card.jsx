@@ -5,6 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 const StyledCard = styled(Card)`
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
